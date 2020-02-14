@@ -1,17 +1,19 @@
-import React, {ChangeEvent} from 'react';
+import React from 'react';
+
+import {ReactInputChangeEvent} from '../../types';
 
 import styles from './styles.module.css';
 
 type Props = {
-    value: number;
-    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+    value: string;
+    onChange: ReactInputChangeEvent;
 }
 
 const Input = (props: Props) => {
     const {value, onChange} = props;
 
     return (
-        <input value={value} onChange={onChange} className={styles.root} />
+        <input value={value} onChange={({target: {value}}) => onChange(value)} className={styles.root} />
     );
 };
 
