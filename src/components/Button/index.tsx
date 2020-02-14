@@ -1,11 +1,13 @@
 import React, {MouseEvent} from 'react';
 import cn from 'classnames';
 
+import {ClassName} from '../../types';
+
 import styles from './styles.module.css';
 
 type Props = {
     text: string;
-    className?: string;
+    className?: ClassName;
     onClick: (e: MouseEvent<HTMLElement>) => void;
 }
 
