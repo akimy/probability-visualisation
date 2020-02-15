@@ -3,28 +3,28 @@ import React from 'react';
 import Label from '../Label';
 import Input from '../Input';
 
-import {ReactInputChangeEvent} from '../../types';
+import {DispatchSetStateActionString} from '../../types';
 
 import styles from './styles.module.css';
 
 type Props = {
     iterations: string;
     probability: string;
-    onChangeProbability: ReactInputChangeEvent;
-    onChangeIterations: ReactInputChangeEvent;
+    setProbability: DispatchSetStateActionString;
+    setIterations: DispatchSetStateActionString;
 }
 
 const Settings = (props: Props) => {
-    const {onChangeProbability, onChangeIterations, iterations, probability} = props;
+    const {setProbability, setIterations, iterations, probability} = props;
 
     return (
         <div>
             <Label className={styles.probabilityLabel} text="Probability %">
-                <Input value={probability} onChange={onChangeProbability} />
+                <Input value={probability} onChange={setProbability} />
             </Label>
 
             <Label text="Iterations count">
-                <Input value={iterations} onChange={onChangeIterations} />
+                <Input value={iterations} onChange={setIterations} />
             </Label>
         </div>
     );
