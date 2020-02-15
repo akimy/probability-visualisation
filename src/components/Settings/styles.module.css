@@ -1,9 +1,0 @@
-.inputGroup {
-    display: flex;
-
-    flex-direction: column;
-}
-
-.probabilityLabel {
-    margin-bottom: 5px;
-}
